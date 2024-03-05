@@ -8,6 +8,7 @@ services:
 
   app:
     build: .
+    user: 'root'
     volumes:
       - .:/rails
     # ports:
