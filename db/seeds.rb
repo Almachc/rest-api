@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+insured = Insured.create(name: 'Homer', document_number: '1234567891')
+vehicle = Vehicle.create(license_plate: 'abc1234', make: 'chevrolet', model: 'camaro', year: '2024')
+Policy.create(effective_from: DateTime.current, effective_until: DateTime.current + 1.year, insured: insured, vehicle: vehicle)
