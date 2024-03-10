@@ -1,4 +1,10 @@
 services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
   postgres:
     image: postgres:16.2
     # ports:
@@ -14,9 +20,11 @@ services:
     # ports:
     #   - 3000:3000
     depends_on:
+      - rabbitmq
       - postgres
     environment:
       POSTGRESQL_HOST: postgres
+      RABBITMQ_HOST: amqp://guest:guest@rabbitmq:5672
     networks:
       default:
         aliases:
