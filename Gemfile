@@ -36,7 +36,7 @@ gem "bootsnap", require: false
 # gem "rack-cors"
 
 gem 'active_model_serializers'
-gem 'sneakers', '~> 2.12'
+gem 'sneakers'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
