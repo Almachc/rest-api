@@ -1,5 +1,6 @@
 class PolicyCreationRequestWorker
   include Sneakers::Worker
+
   from_queue :policy_creation_request,
              routing_key: ['policy_creation_requested']
 
