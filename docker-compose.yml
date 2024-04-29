@@ -27,6 +27,7 @@ services:
       RABBITMQ_HOST: amqp://guest:guest@rabbitmq:5672
 
   app:
+    container_name: policyzinha-service
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -42,11 +43,8 @@ services:
     environment:
       POSTGRESQL_HOST: postgres
       RABBITMQ_HOST: amqp://guest:guest@rabbitmq:5672
-    networks:
-      default:
-        aliases:
-          - policyzinha-service
 
 networks:
   default:
-    driver: bridge
+    name: shared_network
+    external: true
