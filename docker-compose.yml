@@ -43,6 +43,7 @@ services:
     environment:
       POSTGRESQL_HOST: postgres
       RABBITMQ_HOST: amqp://guest:guest@rabbitmq:5672
+      JWT_SECRET: 'bolinha'
 
 networks:
   default:
