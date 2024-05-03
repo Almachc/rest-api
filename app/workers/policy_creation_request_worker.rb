@@ -21,8 +21,8 @@ class PolicyCreationRequestWorker
       )
 
       Policy.create!(
-        effective_from: parsed_message[:effective_from],
-        effective_until: parsed_message[:effective_until],
+        effective_from: Date.today,
+        effective_until: Date.today.next_year,
         insured: insured,
         vehicle: vehicle
       )
